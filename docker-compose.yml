@@ -1,0 +1,19 @@
+version: '3.0'
+services:
+  hubot-chatgpt-he:
+    container_name: hubot-chatgpt-he
+    image: rocketchat/hubot-rocketchat:latest
+    restart: unless-stopped
+    environment:
+      - ROCKETCHAT_URL=YOUR_ROCKETCHAT_URL
+      - ROCKETCHAT_ROOM=''
+      - RESPOND_TO_DM=true
+      - LISTEN_ON_ALL_PUBLIC=true
+      - ROCKETCHAT_USER=YOUR_BOT_USERNAME
+      - ROCKETCHAT_PASSWORD=YOUR_BOT_PASSWD
+      - ROCKETCHAT_AUTH=password
+      - BOT_NAME=bot
+    volumes:
+      - ./scripts:/home/hubot/scripts
+ 
+      
